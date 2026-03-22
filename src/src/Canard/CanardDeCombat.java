@@ -1,6 +1,6 @@
 package Canard;
 
-public abstract class CanardDeCombat {
+public abstract class CanardDeCombat implements Soignable,Combattant{
 
     private static final int ATK_MIN = 1;
 
@@ -73,7 +73,20 @@ public abstract class CanardDeCombat {
         return "["+getType()+"]"+nom+"«"+surnom+"»"+"(PV:" + pvActuel + "/" + pvMax + "| ATK:"+ attaque +")";
     }
 
-    public void attaquer(CanardDeCombat cible){
-        //TODO voila voila
+    public abstract void attaquer(CanardDeCombat cible);
+
+    protected void effectuerAttaque(CanardDeCombat cible, double mutliplicateur){
+        int degats = (int)(getAttaque() * mutliplicateur);
+        System.out.printf("%s attaque %s ! ( %s --> %s : X %f ) --> %d dégats \n",
+                getSurnom(),cible.getSurnom(), getType(),cible.getType(),mutliplicateur,degats);
     }
+
+    public double etreAttaquerPar(CanardFeu attaquant){ return 1.0;}
+
+    public double etreAttaquerPar(CanardEau attaquant){ return 1.0;}
+
+    public double etreAttaquerPar(CanardPlante attaquant){ return 1.0;}
+
+    public double etreAttaquerPar(CanardClassique attaquant){ return 1.0;}
+
 }

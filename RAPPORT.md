@@ -6,3 +6,12 @@ Ce qu'il se passe, c'est qu'on a une exception car il n'existe pas de méthode g
 Pour résoudre ce problème il faut passez le type de canards attaqué plutot que la classe abstraite, donc il faut faire une méthode par type de canard dans CanardFeu, CanardEau, etc. Cette méthode donne le multiplicateur. 
 
 Ou alors on fais comme vous nous dites de faire dans la consigne. 
+
+### R3 :
+J'ai dû ecrire 13 méthode etreAttaquePar() pour seulement 4 type différents.
+
+### R4 :
+Une interface définis une liste de chose qu'un objet est capable de faire, en gros une liste de capacités, 
+Donc si on crée d'autres classes qui ont les capacités de se battre et de se soigner il suffiras d'implementer
+les deux interface dans les classe crées. Alors que si on les laisse dans canards ça en fais des cpacités propre au canards.
+Car une classe abstraite definis ce qu'est l'objet. 

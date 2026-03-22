@@ -16,6 +16,15 @@ public class CanardClassique extends CanardDeCombat {
     }
 
     @Override
+    public void attaquer(CanardDeCombat cible){
+        double multiplicateur = cible.etreAttaquerPar(this);
+        effectuerAttaque(cible, multiplicateur);
+        if(cible.estKo()){
+            System.out.printf("%s adverse est ko\n", cible.getSurnom());
+        }
+    }
+
+    @Override
     public String toString() {
         return super.toString() + "[ Canard de base. ratata en gros ]";
     }

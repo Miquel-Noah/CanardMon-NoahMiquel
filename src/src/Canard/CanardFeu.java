@@ -22,9 +22,26 @@ public class CanardFeu extends CanardDeCombat {
         return "Feu";
     }
 
+    @Override
+    public void attaquer(CanardDeCombat cible){
+        double multiplicateur = cible.etreAttaquerPar(this) + intensiteFlamme;
+        effectuerAttaque(cible, multiplicateur);
+        if(cible.estKo()){
+            System.out.printf("%s adverse est ko\n", cible.getSurnom());
+        }
+    }
 
     @Override
     public String toString() {
         return super.toString() + "[Intensité des flammes : " + getIntensiteFlamme() + " ]";
     }
+
+    @Override
+    public double etreAttaquerPar(CanardFeu attaquant){ return 0.5;}
+
+    @Override
+    public double etreAttaquerPar(CanardEau attaquant){ return 2.0;}
+
+    @Override
+    public double etreAttaquerPar(CanardPlante attaquant){ return 0.5;}
 }

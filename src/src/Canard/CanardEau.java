@@ -25,12 +25,25 @@ public class CanardEau extends CanardDeCombat {
 
     @Override
     public void attaquer(CanardDeCombat cible){
-        super.attaquer(cible);
+        double multiplicateur = cible.etreAttaquerPar(this);
         System.out.printf(" Jet d'eau (Pression : %d) !", getPressionJet());
+        effectuerAttaque(cible,multiplicateur);
+        if(cible.estKo()){
+            System.out.printf("%s adverse est ko\n", cible.getSurnom());
+        }
     }
 
     @Override
     public String toString() {
         return super.toString() + "[Pression du jet d'eau : " + getPressionJet() + " ]";
     }
+
+    @Override
+    public double etreAttaquerPar(CanardFeu attaquant){ return 0.5;}
+
+    @Override
+    public double etreAttaquerPar(CanardEau attaquant){ return 0.5;}
+
+    @Override
+    public double etreAttaquerPar(CanardPlante attaquant){ return 2.0;}
 }
