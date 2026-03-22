@@ -17,6 +17,6 @@ public class CanardClassique extends CanardDeCombat {
 
     @Override
     public String toString() {
-        return super.toString + "[ Canard de base. ratata en gros ]";
+        return super.toString() + "[ Canard de base. ratata en gros ]";
     }
 }

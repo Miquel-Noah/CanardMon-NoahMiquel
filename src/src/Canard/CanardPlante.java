@@ -10,16 +10,11 @@ public class CanardPlante extends CanardDeCombat {
         this(nom,100,10);
     }
 
-    public void setPvActuel(int pvActuel){
-        super.pvActuel = pvActuel;
-    }
-
-
     public void regenerer() {
         int pvActuel = super.getPvActuel();
-        double soin = super.getPvMax * 0.10;
-        pvActuel = Math.min((int) pvActuel + soin , super.getPvMax());
-        setPvActuel(pvActuel);
+        double soin = super.getPvMax() * 0.10;
+        pvActuel = (int) Math.min(pvActuel + soin , super.getPvMax());
+        super.setPvActuel(pvActuel);
     }
 
     @Override
@@ -29,6 +24,6 @@ public class CanardPlante extends CanardDeCombat {
 
     @Override
     public String toString() {
-        return super.toString + "[ Se régénère de 10% a chaque tours ]";
+        return super.toString() + "[ Se régénère de 10% a chaque tours ]";
     }
 }

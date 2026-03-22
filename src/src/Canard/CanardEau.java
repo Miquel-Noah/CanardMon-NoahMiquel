@@ -10,10 +10,10 @@ public class CanardEau extends CanardDeCombat {
     }
 
     private CanardEau(int pressionJet){
-        this('CanardEau',100,10,pressionJet);
+        this("CanardEau",100,10,pressionJet);
     }
 
-    public double getPressionJet() {
+    public int getPressionJet() {
         return pressionJet;
     }
 
@@ -25,12 +25,12 @@ public class CanardEau extends CanardDeCombat {
 
     @Override
     public void attaquer(CanardDeCombat cible){
-        super.attaquer();
-        printf(" Jet d'eau (Pression : %d) !", getPressionJet());
+        super.attaquer(cible);
+        System.out.printf(" Jet d'eau (Pression : %d) !", getPressionJet());
     }
 
     @Override
     public String toString() {
-        return super.toString + "[Pression du jet d'eau : " + getPressionJet() + " ]";
+        return super.toString() + "[Pression du jet d'eau : " + getPressionJet() + " ]";
     }
 }

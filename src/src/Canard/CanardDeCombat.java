@@ -52,6 +52,8 @@ public abstract class CanardDeCombat {
         this.surnom = surnom;
     }
 
+    public void setPvActuel(int pvActuel){ this.pvActuel = pvActuel;}
+
     public boolean estKo(){
         return pvActuel<= 0;
     }

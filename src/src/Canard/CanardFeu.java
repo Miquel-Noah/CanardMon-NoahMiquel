@@ -10,7 +10,7 @@ public class CanardFeu extends CanardDeCombat {
     }
 
     private CanardFeu(double intensiteFlamme){
-        this('CanardFeu',100,10,intensiteFlamme);
+        this("CanardFeu",100,10,intensiteFlamme);
     }
 
     public double getIntensiteFlamme() {
@@ -25,6 +25,6 @@ public class CanardFeu extends CanardDeCombat {
 
     @Override
     public String toString() {
-        return super.toString + "[Intensité des flammes : " + getIntensiteFlamme() + " ]";
+        return super.toString() + "[Intensité des flammes : " + getIntensiteFlamme() + " ]";
     }
 }
