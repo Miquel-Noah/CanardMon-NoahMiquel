@@ -69,6 +69,10 @@ public abstract class CanardDeCombat implements Soignable,Combattant{
 
     public abstract String getType();
 
+    public void setAttaque(int atk){
+        this.attaque = atk;
+    }
+
     public String toString() {
         return "["+getType()+"]"+nom+"«"+surnom+"»"+"(PV:" + pvActuel + "/" + pvMax + "| ATK:"+ attaque +")";
     }

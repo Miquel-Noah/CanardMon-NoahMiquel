@@ -15,3 +15,8 @@ Une interface définis une liste de chose qu'un objet est capable de faire, en g
 Donc si on crée d'autres classes qui ont les capacités de se battre et de se soigner il suffiras d'implementer
 les deux interface dans les classe crées. Alors que si on les laisse dans canards ça en fais des cpacités propre au canards.
 Car une classe abstraite definis ce qu'est l'objet. 
+
+### R5 :
+Comme c'est fais actuellement oui il faudrais créer une classe canardConfus pour chaque type mais ce n'est pas fou, 
+car pour 4 type on 8 classe rien qu'avec le status confus donc si on a 3 états sa nous fais un total de 12 classe
+pour quatre type.
