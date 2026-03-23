@@ -28,9 +28,6 @@ public class CanardEau extends CanardDeCombat {
         double multiplicateur = cible.etreAttaquerPar(this);
         System.out.printf(" Jet d'eau (Pression : %d) !", getPressionJet());
         effectuerAttaque(cible,multiplicateur);
-        if(cible.estKo()){
-            System.out.printf("%s adverse est ko\n", cible.getSurnom());
-        }
     }
 
     @Override

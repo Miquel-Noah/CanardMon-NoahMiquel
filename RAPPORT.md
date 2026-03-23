@@ -20,3 +20,9 @@ Car une classe abstraite definis ce qu'est l'objet.
 Comme c'est fais actuellement oui il faudrais créer une classe canardConfus pour chaque type mais ce n'est pas fou, 
 car pour 4 type on 8 classe rien qu'avec le status confus donc si on a 3 états sa nous fais un total de 12 classe
 pour quatre type.
+
+### R6 :
+Pour moi le instance of est signe d'une mauvaise conceptions car si on à d'autres canards qui ont une actions en fin de tours
+il faut rajouter des if instance of dans le code de arènes. Donc oui ce problème pourrais etre résolue par une méthode finDeTours 
+que l'on pourrais définir dans une interface plutot que dans canards de combat car tous les canards n'ont pas d'actions de fin de tours. 
+Ensuite il nous suffite d'implémenter l'interface dans canardPlante et canardGlace si on rajoute un type glace.

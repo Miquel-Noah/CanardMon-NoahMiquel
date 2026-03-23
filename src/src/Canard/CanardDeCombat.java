@@ -60,7 +60,7 @@ public abstract class CanardDeCombat implements Soignable,Combattant{
 
     public void subirDegat(int degats){
         pvActuel -= degats;
-        System.out.println(surnom + " subit " + degats + " dégâts ! (PV:" + pvActuel + "/" + pvMax + ")");
+        System.out.println(surnom + " subit " + degats + " dégâts ! (PV:" + Math.max(pvActuel, 0) + "/" + pvMax + ")");
     }
 
     public void soigner(){
@@ -74,7 +74,7 @@ public abstract class CanardDeCombat implements Soignable,Combattant{
     }
 
     public String toString() {
-        return "["+getType()+"]"+nom+"«"+surnom+"»"+"(PV:" + pvActuel + "/" + pvMax + "| ATK:"+ attaque +")";
+        return "["+getType()+"]"+nom+"«"+surnom+"»"+"(PV:" + Math.max(pvActuel, 0) + "/" + pvMax + "| ATK:"+ attaque +")";
     }
 
     public abstract void attaquer(CanardDeCombat cible);
@@ -83,6 +83,7 @@ public abstract class CanardDeCombat implements Soignable,Combattant{
         int degats = (int)(getAttaque() * mutliplicateur);
         System.out.printf("%s attaque %s ! ( %s --> %s : X %f ) --> %d dégats \n",
                 getSurnom(),cible.getSurnom(), getType(),cible.getType(),mutliplicateur,degats);
+        cible.subirDegat(degats);
     }
 
     public double etreAttaquerPar(CanardFeu attaquant){ return 1.0;}

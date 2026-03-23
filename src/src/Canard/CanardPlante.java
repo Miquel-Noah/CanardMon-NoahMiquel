@@ -26,9 +26,6 @@ public class CanardPlante extends CanardDeCombat {
     public void attaquer(CanardDeCombat cible){
         double multiplicateur = cible.etreAttaquerPar(this);
         effectuerAttaque(cible, multiplicateur);
-        if(cible.estKo()){
-            System.out.printf("%s adverse est ko\n", cible.getSurnom());
-        }
     }
 
     @Override
